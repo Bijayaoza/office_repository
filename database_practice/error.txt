@@ -1,0 +1,15 @@
+(myenv) lenovo@lenovo-Lenovo-V130-15IKB:~/database_practice$ python3 practice.py
+Warning: State NATIONWIDE not found in database
+Warning: State NATIONWIDE not found in database
+Warning: State NATIONWIDE not found in database
+Warning: State NATIONWIDE not found in database
+Warning: State NATIONWIDE not found in database
+Warning: State WYOMING COLORADO not found in database
+Warning: State NATIONWIDE not found in database
+Warning: State NATIONWIDE not found in database
+Warning: State NATIONWIDE not found in database
+Warning: State NATIONWIDE not found in database
+Warning: State NATIONWIDE not found in database
+Successfully inserted 655 records
+(myenv) lenovo@lenovo-Lenovo-V130-15IKB:~/database_practice$ ^C
+(myenv) lenovo@lenovo-Lenovo-V130-15IKB:~/database_practice$ 

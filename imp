@@ -1,0 +1,67 @@
+i need to perform web scrapping firstly take an part no input from user 
+and then  go to this website
+https://portal.ct.gov/das/ctsource/bidboard
+and go in the search bar  i will provide its html part
+and used java script or any other technique  and type this part no in search bar
+<input _ngcontent-whk-c61="" id="search" placeholder="Search..." type="search" required="" style="padding-right: 40px;" class="ng-untouched ng-pristine ng-invalid">
+after that i wil provide the search item html see the search part no if it match then go to that page here 13924 is it part no after it match go to that link
+<a _ngcontent-whk-c69="" style="cursor: pointer;"><span _ngcontent-whk-c69="" class="title teal-text"> 13924 |</span> ACTUARIAL VALUATION AND CONSULTING SERVICES FOR SERS<sup _ngcontent-whk-c69="" style="font-size: 10px;"><i _ngcontent-whk-c69="" class="fa fa-asterisk"></i></sup><!----></a>
+
+after that there will be multiple file which all need  to download as shown below
+ <a _ngcontent-whk-c73="" class="pointer">1. 2023-02-23-SERC RFP for Actuarial Services.pdf</a>
+
+<a _ngcontent-whk-c73="" class="pointer">1. SERS RFP Question Responses.pdf</a>
+
+
+<a _ngcontent-whk-c73="" class="pointer">1. VendorChangeDetailsReport_13924_v1_Mar_10_23.pdf</a>
+
+while downloading each file there will be chaptcha so for breaking it used mine chaptcha code 
+mine captcha solving code is
+# from DrissionPage import ChromiumPage 
+# from RecaptchaSolver import RecaptchaSolver
+# import time
+
+# while True:
+#     driver = ChromiumPage()
+#     recaptchaSolver = RecaptchaSolver(driver)
+
+#     driver.get("https://www.google.com/recaptcha/api2/demo")
+
+#     t0 = time.time()
+#     recaptchaSolver.solveCaptcha()
+#     print(f"Time to solve the captcha: {time.time()-t0:.2f} seconds")
+
+#     driver.ele("#recaptcha-demo-submit").click()
+
+#     driver.close()
+
+#     print("Waiting 5 minutes before rerunning...")
+#     time.sleep(300)  # Sleep for 5 minutes
+
+
+from DrissionPage import ChromiumPage 
+from RecaptchaSolver import RecaptchaSolver
+import time
+
+while True:
+    driver = ChromiumPage()
+    recaptchaSolver = RecaptchaSolver(driver)
+    
+    try:
+        driver.get("https://www.google.com/recaptcha/api2/demo")
+        
+        t0 = time.time()
+        recaptchaSolver.solveCaptcha()
+        print(f"Time to solve the captcha: {time.time()-t0:.2f} seconds")
+        
+        driver.ele("#recaptcha-demo-submit").click()
+        print("Form submitted successfully")
+        
+    except Exception as e:
+        print(f"Error during captcha solving: {str(e)}")
+        
+    finally:
+        driver.close()
+        print("Waiting 5 minutes before next run...")
+        # time.sleep(300)  # 300 seconds = 5 minutes
+        time.sleep(60)  # 60 seconds = 1 minutes
